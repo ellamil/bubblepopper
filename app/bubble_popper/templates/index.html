@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bubble Popper</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../static/css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">Bubble Popper</div>
+    <div class="address-bar">Breaking out of the news filter bubble</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Bubble Popper</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index">Home Page</a>
+                    </li>
+                    <li>
+                        <a href="how">How It Works</a>
+                    </li>
+                    <li>
+                        <a href="about">About Melissa</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+
+<br>
+<center>
+<form  action="/results" method="GET">
+    <div class="form-group">
+        <input type="text" id="twitter_handle" name="twitter_handle" placeholder="Enter your Twitter handle" style="font-size: 14pt">
+            <select name="comfort_level" style="font-size: 14pt">
+                <option selected disabled>Choose your comfort level</option>
+                <option value="same, same">Same, same</option>
+                <option value="kinda different">Kinda different</option>
+                <option value="way out there">Way out there</option>
+            </select>
+        <button type="submit" class="btn btn-default btn-sm" style="font-size: 14pt">POP!</button>
+        <p style="color:white; font-size:11pt;"><strong>Note:</strong> The app takes a few moments (about 30 seconds) to pull your shared articles from their corresponding websites.</p>
+    </div>
+</form>
+</center>
+<br> 
+
+<div class="box">
+    <h2 class="intro-text text-center">Using Bubble Popper</h2>
+    <center><p>First, enter your Twitter handle (yourname or @YourName). Second, pick your comfort level (same-same, kinda different, or way out there). The app will scrape your timeline to understand your bubble: What articles and publications do you read? The app will then recommend articles from publications you do not normally read: How far away from your bubble do you want to explore?</p></center> 
+</div>
+
+<div class="box">
+    <h2 class="intro-text text-center">Why Bubble Popper?</h2>
+    <center><p>Social media is a major source of news for a lot of people. However, it tends to show only content from friends and outlets with the same opinions -- the so-called filter bubble. Currently, people have to actively seek out content with different perspectives. How can these platforms recommend content outside of people's usual news feeds to help them break out of their filter bubble? With <i>Bubble Popper</i>, Twitter users can find articles about the topics they are interested in but from publications with a different ideology.</p></center> 
+</div>           
+
+</div>
+<!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="../static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+</html>

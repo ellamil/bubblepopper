@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bubble Popper: How It Works</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../static/css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">Bubble Popper</div>
+    <div class="address-bar">Breaking out of the news filter bubble</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Bubble Popper</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index">Home Page</a>
+                    </li>
+                    <li>
+                        <a href="how">How It Works</a>
+                    </li>
+                    <li>
+                        <a href="about">About Melissa</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+
+<div class="box">
+
+    <h2 class="intro-text text-center">1. Defining bubbles: Article topics</h2>
+
+    <p>
+
+One aspect of a Twitter user's bubble is the topics of the articles they read. Therefore, the model identified 20 topics from 30,000 articles published by 30 major news outlets (shared on their Twitter feeds). Using latent Dirichlet allocation, words from the articles that tended to occur together were grouped into topics. Each article was then assigned topic probabilities based on its content.  
+
+    </p>
+
+</div>     
+
+<div class="box">
+
+    <h2 class="intro-text text-center">2. Defining bubbles: Publication audience</h2>
+
+    <p>
+
+Another aspect of a Twitter user's bubble is the ideology of the publications the articles are from. Therefore, the model grouped the 30,000 articles into 4 ideologies. Using k-means clustering, groups of articles were identified according to the audience profiles of their source publications: a) majority ideology of people who get their news from a given publication, and b) majority ideology of people who trust a given publication as a news source <font style="color:#404040; font-size:11pt;">[<a href="http://www.journalism.org/2014/10/21/section-1-media-sources-distinct-favorites-emerge-on-the-left-and-right/" target="_blank" style="color:#404040;">Pew Research Center Report: Political Polarization and Media Habits</a>]</font>. Each article was assigned to either the mostly liberal, mixed liberal, mixed conservative, or mostly conservative clusters. 
+
+    </p>
+
+</div>
+
+<div class="box">
+
+    <h2 class="intro-text text-center">3. Defining bubbles: Twitter user</h2>
+
+    <p>
+
+After the app pulls a Twitter user's shared articles, the model assigns 20 topic probabilities to the contents of each article and assigns 2 ideology scores to each article according to its source publication. The model then predicts which of the 4 ideology clusters described previously the Twitter user falls into.  
+
+    </p>
+
+</div>
+
+<div class="box">
+
+    <h2 class="intro-text text-center">4. Bursting bubbles: Article recommendations</h2>
+
+    <p>
+
+After the model predicts the Twitter user's ideology cluster, it selects an alternate cluster to retrieve articles from according to the Twitter user's comfort level: same-same (similar ideology), kinda different, or way out there (opposite ideology). The model then ranks the articles in this cluster according to the highest topic similarity (measured by the cosine similarity of topic probabilities between the Twitter user and each article in the corpus). The top five articles are in turn ranked according to the highest ideology distance (measured by the Euclidean distance of publication scores between the user and each article in the corpus).   
+
+    </p>
+
+</div>
+     
+</div>
+<!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="../static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+</html>
