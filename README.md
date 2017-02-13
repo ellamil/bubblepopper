@@ -1,6 +1,5 @@
-# Bubble Popper
-## Breaking out of the news filter bubble
-www.melissaellamil.com
+# <a href="www.melissaellamil.com">Bubble Popper</a>
+### Breaking out of the news filter bubble
 
 #### Using Bubble Popper
 
