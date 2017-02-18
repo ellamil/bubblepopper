@@ -13,15 +13,15 @@ Social media is a major source of news for a lot of people. However, it tends to
 
 *1. Defining bubbles: Article topics*
 
-One aspect of a Twitter user's bubble is the topics of the articles they read. Therefore, the model identified 20 topics from 30,000 articles published by 30 major news outlets (shared on their Twitter feeds). Using latent Dirichlet allocation, words from the articles that tended to occur together were grouped into topics. Each article was then assigned topic probabilities based on its content.
+One aspect of a Twitter user's bubble is the topics of the articles they read. Therefore, the model identified 20 topics from 30,000 articles published by 30 major news outlets and shared on their Twitter feeds. The articles were obtained using a combination of the Twitter Rest API, Beautiful Soup, and a Python module called Newspaper. Using latent Dirichlet allocation from the Gensim package, words from the articles that tended to occur together were grouped into topics. Each article was then assigned topic probabilities based on its content. Twenty topics were chosen to maximize the consistency of topic assignment and minimize overlap between the different topics. 
 
 *2. Defining bubbles: Publication audience*
 
-Another aspect of a Twitter user's bubble is the ideology of the publications the articles are from. Therefore, the model grouped the 30,000 articles into 4 ideologies. Using k-means clustering, groups of articles were identified according to the audience profiles of their source publications: a) majority ideology of people who get their news from a given publication, and b) majority ideology of people who trust a given publication as a news source [Pew Research Center Report: Political Polarization and Media Habits]. Each article was assigned to either the mostly liberal, mixed liberal, mixed conservative, or mostly conservative clusters.
+Another aspect of a Twitter user's bubble is the ideology of the publications the articles are from. Therefore, the model grouped the 30,000 articles into 4 ideologies. Using k-means clustering from scikit-learn, groups of articles were identified according to the audience profiles of their source publications: a) majority ideology of people who get their news from a given publication, and b) majority ideology of people who trust a given publication as a news source [Pew Research Center Report: Political Polarization and Media Habits]. Each article was assigned to either the mostly liberal, mixed liberal, mixed conservative, or mostly conservative clusters. Four clusters were chosen to maximize the consistency of cluster assignment and minimize overlap between the different clusters. 
 
 *3. Defining bubbles: Twitter user*
 
-After the app pulls a Twitter user's shared articles, the model assigns 20 topic probabilities to the contents of each article and assigns 2 ideology scores to each article according to its source publication. The model then predicts which of the 4 ideology clusters described previously the Twitter user falls into.
+After the app (implemented using Flask and PostgreSQL on AWS) pulls a Twitter user's shared articles, the model assigns 20 topic probabilities to the contents of each article and assigns 2 ideology scores to each article according to its source publication. The model then predicts which of the 4 ideology clusters described previously the Twitter user falls into. 
 
 *4. Bursting bubbles: Article recommendations*
 
