@@ -1,4 +1,4 @@
-# <a href="www.melissaellamil.com">Bubble Popper</a>
+# [Bubble Popper](http://www.melissaellamil.com)
 ### Breaking out of the news filter bubble
 
 #### Using Bubble Popper
