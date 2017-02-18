@@ -76,7 +76,8 @@
 
     <p>
 
-One aspect of a Twitter user's bubble is the topics of the articles they read. Therefore, the model identified 20 topics from 30,000 articles published by 30 major news outlets (shared on their Twitter feeds). Using latent Dirichlet allocation, words from the articles that tended to occur together were grouped into topics. Each article was then assigned topic probabilities based on its content.  
+One aspect of a Twitter user's bubble is the topics of the articles they read. Therefore, the model identified 20 topics from 30,000 articles published by 30 major news outlets and shared on their Twitter feeds. The articles were obtained using a combination of the Twitter Rest API, Beautiful Soup, and a Python module called Newspaper. Using latent Dirichlet allocation from the Gensim package, words from the articles that tended to occur together were grouped into topics. Each article was then assigned topic probabilities based on its content. Twenty topics were chosen to maximize the consistency of topic assignment and minimize overlap between the different topics.
+  
 
     </p>
 
@@ -88,7 +89,7 @@ One aspect of a Twitter user's bubble is the topics of the articles they read. T
 
     <p>
 
-Another aspect of a Twitter user's bubble is the ideology of the publications the articles are from. Therefore, the model grouped the 30,000 articles into 4 ideologies. Using k-means clustering, groups of articles were identified according to the audience profiles of their source publications: a) majority ideology of people who get their news from a given publication, and b) majority ideology of people who trust a given publication as a news source <font style="color:#404040; font-size:11pt;">[<a href="http://www.journalism.org/2014/10/21/section-1-media-sources-distinct-favorites-emerge-on-the-left-and-right/" target="_blank" style="color:#404040;">Pew Research Center Report: Political Polarization and Media Habits</a>]</font>. Each article was assigned to either the mostly liberal, mixed liberal, mixed conservative, or mostly conservative clusters. 
+Another aspect of a Twitter user's bubble is the ideology of the publications the articles are from. Therefore, the model grouped the 30,000 articles into 4 ideologies. Using k-means clustering from scikit-learn, groups of articles were identified according to the audience profiles of their source publications: a) majority ideology of people who get their news from a given publication, and b) majority ideology of people who trust a given publication as a news source <font style="color:#404040; font-size:11pt;">[<a href="http://www.journalism.org/2014/10/21/section-1-media-sources-distinct-favorites-emerge-on-the-left-and-right/" target="_blank" style="color:#404040;">Pew Research Center Report: Political Polarization and Media Habits</a>]</font>. Each article was assigned to either the mostly liberal, mixed liberal, mixed conservative, or mostly conservative clusters. Four clusters were chosen to maximize the consistency of cluster assignment and minimize overlap between the different clusters. 
 
     </p>
 
@@ -100,7 +101,7 @@ Another aspect of a Twitter user's bubble is the ideology of the publications th
 
     <p>
 
-After the app pulls a Twitter user's shared articles, the model assigns 20 topic probabilities to the contents of each article and assigns 2 ideology scores to each article according to its source publication. The model then predicts which of the 4 ideology clusters described previously the Twitter user falls into.  
+After the app (implemented using Flask and PostgreSQL on AWS) pulls a Twitter user's shared articles, the model assigns 20 topic probabilities to the contents of each article and assigns 2 ideology scores to each article according to its source publication. The model then predicts which of the 4 ideology clusters described previously the Twitter user falls into.  
 
     </p>
 
@@ -117,7 +118,13 @@ After the model predicts the Twitter user's ideology cluster, it selects an alte
     </p>
 
 </div>
-     
+
+<br>
+<center>
+<iframe src="https://docs.google.com/presentation/d/1CKGQy5lvf-9mvi-HpuOfnNcZyjp7M8qXowUvNWKpYQ4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</center>
+<br><br>
+
 </div>
 <!-- /.container -->
 
