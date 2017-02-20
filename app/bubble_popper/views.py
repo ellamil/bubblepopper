@@ -84,7 +84,7 @@ def results():
   
     recs,user_score,user_bubble,alt_bubble,message = run_popper(twitter_user,comfort_level,api,conn)
 
-    # 0 = liberal, 1 = conservative, 2 = mixed, 3 = wsj
+    # 0 = mostly liberal, 1 = mostly conservative, 2 = mixed liberal, 3 = mixed conservative
     if user_bubble == 0: user_ideo = 'mostly liberal'
     elif user_bubble == 1: user_ideo = 'mostly conservative'
     elif user_bubble == 2: user_ideo = 'mixed liberal'

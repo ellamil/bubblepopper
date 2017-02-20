@@ -183,7 +183,7 @@ def define_bubble(pub_data,doc_data,kmeansfile='pub_kmeans_clean_cluster4.pkl'):
     kmeans_model,kmeans,kmeans_clusters,kmeans_distances = pickle.load(open(kmeansfile,'rb'))   
     user_bubble = kmeans.predict(user_score.reshape(1,-1))
     
-    # 0 = liberal, 1 = conservative, 2 = mixed, 3 = wsj    
+    # 0 = mostly liberal, 1 = mostly conservative, 2 = mixed liberal, 3 = mixed conservative   
     return user_score,user_bubble
 
 
@@ -196,7 +196,7 @@ def burst_bubble(user_score,user_bubble,comfort_level,conn,kmeansfile='pub_kmean
     topic_data = article_data[topic_list]
     pub_data = article_data[dimensions]
 
-    # 0 = liberal, 1 = conservative, 2 = mixed, 3 = wsj
+    # 0 = mostly liberal, 1 = mostly conservative, 2 = mixed liberal, 3 = mixed conservative
     if user_bubble == 0:
         if comfort_level == 0: alt_bubble = 0
         elif comfort_level == 1: alt_bubble = 3
